@@ -1838,10 +1838,6 @@ jl_cgval_t function_sig_t::emit_a_ccall(
 #else
                 ;
 #endif
-            if (!f_extern &&
-                (!isa<Function>(llvmf) ||
-                 cast<Function>(llvmf)->getIntrinsicID() == Intrinsic::not_intrinsic))
-                jl_error("llvmcall only supports intrinsic calls");
         }
     }
     else if (symarg.jl_ptr != NULL) {
